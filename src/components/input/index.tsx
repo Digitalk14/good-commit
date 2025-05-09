@@ -39,16 +39,16 @@ export const Input = () => {
       const response = await res.json();
         const text = response.choices[0].message.content;
         setCommit(text.trim());
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
       setCommit("Ooops something went wrong");
     }
     setLoading(false);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-[640px]">
-      <form onSubmit={handleSubmit} className="search-container">
+    <div className="flex flex-col items-center justify-center w-full max-w-[640px] relative">
+      <form onSubmit={handleSubmit} className={`search-container ${loading ? "loading" : ""}`}  >
         <input
           type="text"
           value={inputValue}
@@ -60,6 +60,11 @@ export const Input = () => {
           Submit
         </button>
       </form>
+      {loading && (
+        <div className="loading-container">
+          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-gray-900 dark:border-white"></div>
+        </div>
+      )}
       {commit && (
         <div className="commit-container w-full mt-6">
           <h2 className="font-semibold mb-2 dark:text-[#ededed]">Commit:</h2>
