@@ -16,7 +16,7 @@ export const Input = () => {
 
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (value.length <= 20) {
+    if (value.length <= MAX_CHARACTERS) {
       setInputValue(value);
     }
   };
