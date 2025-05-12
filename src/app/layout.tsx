@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
@@ -14,10 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Good Commit",
-  description: "Git Commit Message Generator",
-};
 
 export default function RootLayout({
   children,
@@ -26,6 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Good Commit</title>
+        <meta name="description" content="Git Commit Message Generator" />
+        <meta name="google-site-verification" content="bFt_1vx5r8PF8cpg2G6pvFWwDdsKfcSGCA0lK8k6ZpY" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
