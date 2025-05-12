@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
@@ -13,7 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,12 +23,24 @@ export default function RootLayout({
       <head>
         <title>Good Commit</title>
         <meta name="description" content="Git Commit Message Generator" />
-        <meta name="google-site-verification" content="yc2jvx7_lKDdV68tD1UROQwwFiYH_-htTe269bkB3AM" />
+        <meta
+          name="google-site-verification"
+          content="yc2jvx7_lKDdV68tD1UROQwwFiYH_-htTe269bkB3AM"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
           <Analytics />
         </ThemeProvider>
