@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <title>Good Commit</title>
         <meta name="description" content="Git Commit Message Generator" />
-        <meta name="google-site-verification" content="bFt_1vx5r8PF8cpg2G6pvFWwDdsKfcSGCA0lK8k" />
+        <meta name="google-site-verification" content="yc2jvx7_lKDdV68tD1UROQwwFiYH_-htTe269bkB3AM" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
