@@ -60,7 +60,7 @@ export const CommitLogs = () => {
       </div>
       
       {isExpanded && (
-        <div className="mt-3 absolute top-full left-0 w-full z-10 shadow-lg rounded-b">
+        <div className="mt-3 absolute top-full left-0 w-full z-10 shadow-lg rounded-b max-h-[250px] overflow-y-auto">
           {commitLogs.map((log: CommitLog) => (
             <div key={log.id} className="p-2 block cursor-pointer text-[#666] ">
               <p>{log.message}</p>

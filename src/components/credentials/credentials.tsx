@@ -15,7 +15,7 @@ const CREDENTIALS = [
 
 export const Credentials = () => {
   return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4 items-center">
+    <div className="flex gap-4 items-center">
       {CREDENTIALS.map((credential) => (
         <a
           key={credential.href}

@@ -33,8 +33,12 @@ export const Input = () => {
     e.preventDefault();
     setLoading(true);
     const newCommit = await getCommitMessage(inputValue);
-    setCommit(newCommit);
-    handleCommitsLog(newCommit);
+    if (newCommit.status === "success") {
+      setCommit(newCommit.message);
+      handleCommitsLog(newCommit.message);
+    } else {
+      setCommit(newCommit.message);
+    }
     setLoading(false);
     setInputValue("");
   };
