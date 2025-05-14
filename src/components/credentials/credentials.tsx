@@ -22,7 +22,7 @@ export const Credentials = () => {
           href={credential.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-900 hover:text-gray-600"
+          className="text-gray-900 hover:text-gray-600 dark:text-[#666] dark:hover:text-[#ddd]"
         >
           <i className={credential.icon} />
         </a>
