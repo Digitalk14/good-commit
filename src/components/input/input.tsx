@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { CopyPasteIcon } from "./copy-paste-icon";
 import { getCommitMessage } from "./utils";
 import { setCommitLogsLocalStorage, getCommitLogsLocalStorage } from "../commit-logs/utils";
+import { Toast } from "../toast/toast";
 
 const MAX_CHARACTERS = 200;
 const MIN_CHARACTERS = 5;
@@ -12,6 +13,7 @@ export const Input = () => {
   const [inputValue, setInputValue] = useState("");
   const [commit, setCommit] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const charactersLeft = MAX_CHARACTERS - inputValue.length;
   const isValid = inputValue.length >= MIN_CHARACTERS;
 
@@ -41,6 +43,11 @@ export const Input = () => {
     }
     setLoading(false);
     setInputValue("");
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(commit);
+    setShowToast(true);
   };
 
   return (
@@ -81,13 +88,18 @@ export const Input = () => {
             </code>
             <button
               className="bg-gray-100 p-2 block rounded cursor-pointer h-[40px]"
-              onClick={() => navigator.clipboard.writeText(commit)}
+              onClick={handleCopy}
             >
               <CopyPasteIcon />
             </button>
           </div>
         </div>
       )}
+      <Toast 
+        message="Copied to clipboard!" 
+        isVisible={showToast} 
+        onClose={() => setShowToast(false)} 
+      />
     </div>
   );
 };
