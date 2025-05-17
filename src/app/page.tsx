@@ -6,7 +6,7 @@ export default function Home() {
       <header className="row-start-1 flex gap-[16px] flex-wrap items-end justify-between w-full max-w-[640px] mx-auto">
         <h1 className="text-xl sm:text-2xl font-bold text-left dark:text-[#666]">Git Commit<br/>Message Generator</h1>
         <p>
-        Good Commit helps you stop worrying about writing perfect Git commit messages. Just type what you did and it generates a clean, conventional commit message for you, like: <span><i>"updated login button style"</i></span>
+          Good Commit helps you stop worrying about writing perfect Git commit messages. Just type what you did and it generates a clean, conventional commit message for you, like: <span><i>&ldquo;updated login button style&rdquo;</i></span>
         </p>
         <Credentials />
       </header>
